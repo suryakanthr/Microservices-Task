@@ -1,68 +1,68 @@
-# Microservices-Task
+Overview
+This document explains how to deploy a simple Node.js microservices architecture using Docker. The microservices include:
+1.	User Service
+2.	Product Service
+3.	Order Service
+4.	Gateway Service
+Each service will be containerized using Docker, and Docker Compose will be used to run and manage all services together.
+________________________________________
+Project Structure
+project-root/
+├── user-service/
+│   ├── app.js
+│   └── package.json
+├── order-service/
+│   ├── app.js
+│   └── package.json
+├── product-service/
+│   ├── app.js
+│   └── package.json
+├── gateway/
+│   ├── app.js
+│   └── package.json
+├── docker-compose.yml
+________________________________________
+Steps to Deploy
+1. Create Dockerfile for Each Service
+Each service needs a Dockerfile to create its Docker image. 
+ 
+2. Create docker-compose.yml
+Create a docker-compose.yml file to run all services together. This file defines how each container should run and connect with each other.
+Example docker-compose.yml:
+ 
+3. Build and Run the Services
+Once all files are set up, run the following command to build and start the services:
+docker-compose up --build
+This will:
+1.	Build the Docker images for each service.
+2.	Start all the services defined in docker-compose.yml.
 
-## Overview
-This document provides details on testing various services after running the `docker-compose` file. These services include User, Product, Order, and Gateway Services. Each service has its own endpoints for testing purposes.
+4. Verify Services
+Once the containers are running, you can access the services in your browser:
+•	Gateway Service: http://localhost:3000
+•	User Service: http://localhost:3001
+•	Order Service: http://localhost:3002
+•	Product Service: http://localhost:3003
 
----
 
-## Services and Endpoints
 
-### **User Service**
-- **Base URL:** `http://localhost:3000`
-- **Endpoints:**
-  - **List Users:**  
-    ```
-    curl http://localhost:3000/users
-    ```
-    Or open in your browser: [http://localhost:3000/users](http://localhost:3000/users)
 
----
 
-### **Product Service**
-- **Base URL:** `http://localhost:3001`
-- **Endpoints:**
-  - **List Products:**  
-    ```
-    curl http://localhost:3001/products
-    ```
-    Or open in your browser: [http://localhost:3001/products](http://localhost:3001/products)
 
----
 
-### **Order Service**
-- **Base URL:** `http://localhost:3002`
-- **Endpoints:**
-  - **List Orders:**  
-    ```
-    curl http://localhost:3002/orders
-    ```
-    Or open in your browser: [http://localhost:3002/orders](http://localhost:3002/orders)
 
----
+ 
 
-### **Gateway Service**
-- **Base URL:** `http://localhost:3003/api`
-- **Endpoints:**
-  - **Users:**  
-    ```
-    curl http://localhost:3003/api/users
-    ```
-  - **Products:**  
-    ```
-    curl http://localhost:3003/api/products
-    ```
-  - **Orders:**  
-    ```
-    curl http://localhost:3003/api/orders
-    ```
 
----
+ 
 
-## Instructions
-1. Start all services using the `docker-compose` file:
-   ```
-   docker-compose up
-   ```
-2. Once the services are running, use the above endpoints to verify the functionality.
 
-Happy testing!
+
+ 
+
+ 
+
+ 
+
+ 
+
